@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "finder.py", line 37, in <module>
+    f(2, l)
+  File "finder.py", line 35, in f
+    return f(element, lst[0][1:])
+  File "finder.py", line 30, in f
+    if len(lst[0])==0:
+TypeError: object of type 'int' has no len()
