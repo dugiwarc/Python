@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "test.py", line 94, in <module>
-    print(decompose(523)) 
-  File "test.py", line 91, in decompose
-    return decompose(bills, lst + [bills[0]])
-  File "test.py", line 88, in decompose
-    if amount > bills[0]:
-TypeError: '>' not supported between instances of 'list' and 'int'
