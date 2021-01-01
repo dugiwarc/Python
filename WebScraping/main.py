@@ -1,9 +1,14 @@
 from bs4 import BeautifulSoup
+import requests
 
-with open('', 'r') as html_file:
-    content = html_file.read()
+html_text = requests.get('https://fr.indeed.com/jobs?q=React&l=France').text
 
-    soup = BeautifulSoup(content, 'lxml')
-    courses_html_tags = soup.find_all('h5')
-    for course in courses_html_tags:
-        print(course)
+soup = BeautifulSoup(html_text, 'html.parser')
+
+job = soup.find(
+    'div', class_='jobsearch-SerpJobCard')
+
+job_title = job.find('h2', class_="title").text.replace(" ", "")
+summary = job.find("div", class_="summary")
+summary_desc = summary.find('li').text
+print(summary_desc)
